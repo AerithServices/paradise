@@ -1,0 +1,4 @@
+discord.py
+modules
+asyncio
+python-dotenv

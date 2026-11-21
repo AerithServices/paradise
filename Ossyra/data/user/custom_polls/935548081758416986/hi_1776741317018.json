@@ -1,0 +1,14 @@
+{
+  "name": "hi",
+  "question": "favorite food?",
+  "options": [
+    "pizza",
+    "burger",
+    "fries",
+    "grilled cheese",
+    "fruit"
+  ],
+  "createdAt": 1776741317018,
+  "createdBy": "935548081758416986",
+  "createdByTag": "duo4199"
+}

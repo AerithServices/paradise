@@ -1,0 +1,14 @@
+{
+  "name": "Opening",
+  "question": "Wanner zullen wij openen",
+  "options": [
+    "Morgen",
+    "Overmorgen",
+    "Anders (Laat het weten)",
+    "Nooit",
+    "Nu"
+  ],
+  "createdAt": 1777221983008,
+  "createdBy": "1474834346392162505",
+  "createdByTag": ".henkie123."
+}

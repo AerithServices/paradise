@@ -1,0 +1,60 @@
+name: Discord Commit Logger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send commit info to Discord
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 1. Basic Info
+          REPO_FULL=${{ github.repository }}
+          REPO_NAME=$(echo "$REPO_FULL" | cut -d'/' -f2)
+          REPO_OWNER=${{ github.repository_owner }}
+          REPO_URL="https://github.com/${{ github.repository }}"
+          COMMIT_COUNT=$(jq -r '.commits | length' "$GITHUB_EVENT_PATH")
+          AUTHOR_NAME=$(jq -r '.commits[-1].author.name' "$GITHUB_EVENT_PATH")
+
+          # 2. Build a line per commit: `sha` message
+          COMMIT_LIST=$(jq -r '.commits[] | "`" + (.id[0:7]) + "` " + (.message | split("\n")[0])' "$GITHUB_EVENT_PATH")
+
+          # 3. Fetch the repo owner's avatar
+          OWNER_ICON=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/users/$REPO_OWNER" | jq -r '.avatar_url')
+
+          # 4. Construct Payload
+          PAYLOAD=$(jq -n \
+            --arg username "$REPO_OWNER" \
+            --arg avatar "$OWNER_ICON" \
+            --arg author "$AUTHOR_NAME" \
+            --arg count "$COMMIT_COUNT" \
+            --arg repo_name "$REPO_NAME" \
+            --arg repo_url "$REPO_URL" \
+            --arg commits "$COMMIT_LIST" \
+            '{
+              username: $username,
+              avatar_url: $avatar,
+              embeds: [{
+                color: 16777215,
+                author: {
+                  name: $author,
+                  icon_url: $avatar
+                },
+                title: ("[" + $repo_name + "]: " + $count + " new commits"),
+                url: $repo_url,
+                description: ("**\($author)** committed **\($count)** new commit(s) to **\($repo_name)**\n\($commits)"),
+                footer: {
+                  text: "Aerith Github Tracker"
+                }
+              }]
+            }')
+
+          # 5. POST to Discord
+          curl -H "Content-Type: application/json" -X POST -d "$PAYLOAD" "$WEBHOOK_URL"

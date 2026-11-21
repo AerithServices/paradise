@@ -1,0 +1,14 @@
+{
+  "name": "who is mad",
+  "question": "owner",
+  "options": [
+    "server",
+    "co owner",
+    "admins",
+    "members",
+    "bots"
+  ],
+  "createdAt": 1776649371282,
+  "createdBy": "1473991397383340136",
+  "createdByTag": "vansh007258"
+}

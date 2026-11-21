@@ -1,0 +1,14 @@
+{
+  "name": "boo",
+  "question": "whos more gay",
+  "options": [
+    "/a-custom-poll name:boo question:whos more gay option1: mike option2:mike option3:mike option4:mike option5:mike",
+    "mike",
+    "mike",
+    "mike",
+    "mike"
+  ],
+  "createdAt": 1776701588566,
+  "createdBy": "1391426022469144697",
+  "createdByTag": "eatmyrottendeadbody"
+}

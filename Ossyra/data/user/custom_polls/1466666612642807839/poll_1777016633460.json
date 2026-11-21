@@ -1,0 +1,14 @@
+{
+  "name": "Poll",
+  "question": "Question",
+  "options": [
+    "Yes",
+    "Yes",
+    "Yes",
+    "Yes",
+    "Yes"
+  ],
+  "createdAt": 1777016633459,
+  "createdBy": "1466666612642807839",
+  "createdByTag": "diveshthe44"
+}

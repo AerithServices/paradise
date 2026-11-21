@@ -1,0 +1,28 @@
+{
+  "GUILD_ID": "guild id",
+  "ADMIN_SERVER_ID": "guild id here",
+  "VERIFICATION_ROLE_ID": "verification role id here",
+  "BYPASS_ROLE_ID": "bypass role id here",
+  "AUTHORIZED_BL_USER_ID": "authorized bl user id here",
+  "IMAGE_ALERT_ROLE_ID": "image alert role id here",
+  "ALERT_CHANNEL_ID": "alert channel id here",
+  "WEBHOOKS": {
+    "IMAGE_DETECTION": "sends a embed and stuff for if someone uses an img (for moderation) PUT URL HERERERE",
+    "CUSTOM_MESSAGE_LOG": "wbhook that logs custom messages sent by the bot, PUT URL HERE",
+    "BLACKLIST_LOG": "bl logs, PUT URL HERE",
+    "COMMAND_LOG": "logs cmds put url here"
+  },
+  "OSSYRA_ICON": "https://i.postimg.cc/Z0zyn59H/ossyra.gif",
+  "RAID_MESSAGE_THUMBNAIL": "https://i.postimg.cc/Z0zyn59H/ossyra.gif",
+  "FOOTER_ICON_URL": "https://i.postimg.cc/LsD7rkNr/Untitled-design-71-removebg-preview.png",
+  "DEFAULT_FOOTER_TEXT": "Ossyra Raiding Inc. - Trust us with your raiding.",
+  "WARN_EMOJI": "⚠️",
+  "TT_YUMMY_EMOJI": "<:TT_yummy:1504964113779134576>",
+  "EXHAUSTED_EMOJI": "<:exhausted:1504963953707712644>",
+  "BLUSH_EMOJI": "<:Blush:1476052863099863216>",
+  "EYES_EMOJI": "<:tt_awkward:1504964059848769780>",
+  "SWEAT_EMOJI": "<:catsweat:1504964240136474686>",
+  "TOKEN_FILE": "token.json",
+  "USER_CONFIG_FILE": "data/user_config.json",
+  "BLACKLIST_FILE": "data/blacklist.json"
+}
